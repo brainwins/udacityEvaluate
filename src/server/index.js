@@ -33,7 +33,7 @@ app.post('/apiCall', (req, res) => {
   const url = req.body.usertext;
   console.log(url)
   //process.env.API_KEY;
-  const apiKey = "5c741a9adeb443e2922f5191320b2018"
+  const apiKey = process.env.API_KEY;
 
     fetch(baseURL+'?key='+apiKey+'&lang=en'+'&url='+url)
       .then(response => response.json())
