@@ -22,22 +22,46 @@
         </header>
 
         <main>
-            <section>
+            <section class="form-container">
+                <section class="title">
+                  <h1>Enter a URL to analyze:</h1>
+                </section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                  <textarea id="userinput" type="text"></textarea>
+                    <input type="submit" class="button" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <span class="invalidURL" id="invalidURL">invalid URL</span>
                 </form>
-            <section>
-
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+                <section class="results">
+                    <h3>Analysis results:</h3>
+                    <div id="results">
+                      <div>
+                      <div class="results-title">Confidence of analysis:</div><span class="results-percentage" id="confidence"></span>
+                      </div>
+                      <div>
+                      <div class="results-title">Agreement: </div><span class="results-percentage" id="agreement"></span>
+                      </div>
+                      <div>
+                      <div class="results-title">Irony: </div><span class="results-percentage" id="irony"></span>
+                      </div>
+                      <div>
+                      <div class="results-title">Subjectivity: </div><span class="results-percentage" id="subjectivity"></span>
+                      </div>
+                    </div>
+                </section>
             </section>
         </main>
 
         <footer>
             <p>This is a footer</p>
         </footer>
-
+        <script>
+         // Check that service workers are supported
+         if ('serviceWorker' in navigator) {
+             // Use the window load event to keep the page load performant
+             window.addEventListener('load', () => {
+                 navigator.serviceWorker.register('/service-worker.js');
+             });
+         }
+        </script>
     </body>
 </html>

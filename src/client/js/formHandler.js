@@ -1,19 +1,37 @@
+import urlValidator from './urlValidator';
+
 function handleSubmit(event) {
+    const invalidURL = document.getElementById("invalidURL");
     event.preventDefault()
 
-    // check what text was put into the form field
-    let formText = document.getElementById('name').value
+    const usertext =  document.getElementById('userinput').value;
 
-    Client.checkForName(formText)
+    if(urlValidator(usertext)){
+      console.log(usertext, "valid")
+      invalidURL.style.display = "none";
+      fetch('http://localhost:8081/apiCall', {
+            method: 'POST',
+            credentials: 'same-origin',
+            cache: 'no-cache',
+            mode: 'cors',
+            headers: { 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*" },
+            body: JSON.stringify({usertext})
+        })
+        .then(response => response.json())
+        .then(data => updateUI(data));
+      }
+      else {
+        console.log("invalid")
+        invalidURL.style.display = "inline-block";
+      }
 
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/test')
-    .then(res => {
-        return res.json()
-    })
-    .then(function(data) {
-        document.getElementById('results').innerHTML = data.message
-    })
+}
+function updateUI (data) {
+  console.log("updateTo", data);
+  document.getElementById('confidence').innerHTML = data.confidence+"%";
+  document.getElementById('agreement').innerHTML = data.agreement;
+  document.getElementById('irony').innerHTML = data.irony;
+  document.getElementById('subjectivity').innerHTML = data.subjectivity;
 }
 
-export { handleSubmit }
+export {handleSubmit}

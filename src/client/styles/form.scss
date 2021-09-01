@@ -3,10 +3,49 @@ form {
     border-radius: 3px;
     padding: 40px;
 }
-
-input {
-    padding: 5px 20px;
-    width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+.form-container{
+  margin-bottom: 0;
+}
+#userinput {
+  padding: 5px 20px;
+  width: 90%;
+  line-height: 16px;
+  margin: auto;
+}
+.results{
+  margin-left: 2.5rem;
+  margin-top: 1em;
+  font-size: 1rem;
+  h3{
+    color:#E9A435;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .results-title{
+    display: inline-block;
+    font-size: 1.3rem;
+    color:#E9A435;
+    margin-top: 1.15rem;
+    margin-right: .15rem;
+  }
+}
+.results-percentage{
+  display: inline-block;
+  font-size: 1.25rem;
+  color:white;
+}
+.title{
+margin-left: 2.5rem;
+margin-top: 1em;
+margin-bottom: 1em;
+font-size: 1rem;
+  h1{
+    color:#fff;
+    font-size: 2rem;
+  }
+}
+.invalidURL{
+  display: none;
+  margin-left: 0.75em;
+  color:red;
 }
