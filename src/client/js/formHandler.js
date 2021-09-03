@@ -1,4 +1,4 @@
-import urlValidator from './urlValidator';
+import {urlValidator} from './urlValidator';
 
 function handleSubmit(event) {
     const invalidURL = document.getElementById("invalidURL");
@@ -6,7 +6,7 @@ function handleSubmit(event) {
 
     const usertext =  document.getElementById('userinput').value;
 
-    if(urlValidator(usertext)){
+    if(Client.urlValidator(usertext)){
       console.log(usertext, "valid")
       invalidURL.style.display = "none";
       fetch('http://localhost:8081/apiCall', {

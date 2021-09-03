@@ -1,4 +1,4 @@
-import handleSubmit from '../src/client/js/formHandler';
+import {handleSubmit} from '../src/client/js/formHandler';
 
 
 describe("Ensure there's a formHandler function", () => {

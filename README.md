@@ -1,29 +1,41 @@
-# Webbpack Express Example App
+# Webpack project for Udacity Front End Nanodegree
 
-The goal of this repo is be an example of a basic but functional app built on Express and Webpack.
+## Table of Contents
 
-If you want to follow along, start from branch 0-initial-setup. Each branch in this project is a step along the path to creating a fully functional webpack setup. In each branch, there will be a documentation file that lists out the steps taken in that branch (each step is also roughly a git commit if you look at the history) which you can use as a checklist when setting up your own projects. 
+1. [ Description ](#description)
+2. [ What was implemented? ](#implemented)
+3. [ Prerequisites](#prerequisite)
+4. [ Installation ](#Installation)
+5. [ To do list](#todo)
 
-## What we will cover
+<a name="description"></a>
+## 1. Description
 
-We will cover:
+Udacity fourth project for Front End Web Developer Nanodegree Program.
+A project to learn Webpack and implement what was learned in prior lessons. Like connecting to an API and updating a web page with this data.
+<a name="implemented"></a>
+## 2. What was implemented?
 
-- Webpack entry point
-- Webpack output and dist folder
-- Webpack Loaders
-- Webpack Plugins
-- Webpack Mode
-- Tools for convenient Webpack development
+- Webpack with dev-build and a prod-build scripts. Also a script to run tests on JEST to verify some functions work.
+- A page where the user enters a URL. The URL gets sent to an Express server where the API call gets made.
+- The Express server returns the data and a function updates the page with this data.
 
-## Get Up and Running
+<a name="Prerequisites"></a>
+## 3. Prerequisites
 
-Fork this repo, then clone the branch of your choice from your forked repo down to your computer:
+Express has to be installed to run the server file.
+You need Node to install Express.
+An API Key for Sentiment Analysis API version 2.1
 
-```
-git clone -- git@github.com:[your-user-name]/webpack-express.git --
-```
+<a name="Installation"></a>
+## 4. Installation
 
-`cd` into your new folder and run:
-- ```npm install```
-- ```npm start``` to start the app
-- this app runs on localhost:8080, but you can of course edit that in server.js
+Go to https://nodejs.org/en/download/ to install Node, then install Express by following the instructions on: https://expressjs.com/en/starter/installing.html
+Open a terminal and go to the directory where server.js is located and run ```node server.js```
+Then visit the address that's retuned on the terminal on your browser.
+
+<a name="todo"></a>
+## 5. To Do list
+
+- Improve the design.
+- Keep old entries so user can revisit them later.
